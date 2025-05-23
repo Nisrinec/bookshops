@@ -1,0 +1,52 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}
+    About Us
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="margin-top: 2%">
+
+      <!-- Introduction Row -->
+      <h1>
+        <small style="color: teal ; margin-left: 1%">About Us</small>
+      </h1>
+      <hr>
+      <div class="col-8">
+      <p align="justify">Book Haven — founded in 2023 in the city of Tangier and hosted on my flash drive, it’s a place where people can buy books online.</p>
+      <p align="justify">Whether it’s a romantic novel or a book about a famous character, we have everything you need. Our online bookstore is a fresh step forward from our usual brick-and-mortar shop, bringing our service to even more people.
+
+We offer books in a wide variety of genres and can even recommend reading based on ratings. For everyone who loves books and enjoys reading, our site is simply a treasure!
+
+Here, you can discover new works and authors you’ve never heard of before. Buying a book online is like a dream come true! Just click one button, and the very book you’ve been dreaming about will be right in your pocket (or, well, your bag).
+
+Don’t hesitate to dive into our extensive collection — we have everything for you!</P>
+      </div>
+
+      <hr>
+      <!-- Team Members Row -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="my-4">
+            <small style="color: teal; margin-left: 1%"> Our Team</small>
+          </h1>
+
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img class="rounded-circle img-fluid d-block mx-auto" src=" {% static '' %}"alt="">
+          <h3>Instructors</h3>
+
+        </div>
+        <div class="col-lg-4 col-sm-6 text-center mb-4">
+          <img class="rounded-circle img-fluid d-block mx-auto" src="{% static '' %}" alt="">
+          <h3>Mark</h3>
+        </div>
+        </div>
+      </div>
+    </div>
+
+        
+        
+
+{% endblock %}

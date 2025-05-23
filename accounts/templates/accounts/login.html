@@ -1,0 +1,38 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}
+    Login
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid" style="margin-top: 5%">
+	
+	<h2 class="text-center">Welcome! Please log in</h2>
+
+	<div class="col-md-6 offset-md-3">
+		<hr>
+		<form method="POST">
+			{% csrf_token %}
+		  <div class="form-group">
+		    
+		    <input type="text" class="form-control"placeholder="username..." name="username">
+		    
+		  </div>
+		  <div class="form-group">
+		   
+		    <input type="password" class="form-control"  placeholder="password..." name="password">
+		  </div>
+            <div class="container-fluid" style="margin-top: 2%; text-align:right">
+	            <small>New user? Create a new account <a href="{% url 'register' %}">Sign Up</a></small>
+            </div>
+		    <button type="submit" class="btn btn-info">Login</button>
+		</form>
+	</div>
+
+</div>
+
+
+
+{% endblock %}
