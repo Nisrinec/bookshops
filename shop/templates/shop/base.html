@@ -6,7 +6,7 @@
     
     
     <link rel="icon" href="{% static 'img/icon.png' %}">
-    <title>{% block title %} BookBuzz - Online Bookstore| Home{% endblock %} </title>
+    <title>{% block title %} BookShop - Online Bookstore| Home{% endblock %} </title>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
@@ -91,7 +91,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.facebook.com/darkkingarthas" target="_blank"><i class="fab fa-facebook-f "></i></a>
+                    <a class="nav-link" href="#" target="_blank"><i class="fab fa-facebook-f "></i></a>
                 </li>
       
                 <li class="nav-item">
@@ -103,18 +103,18 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href=" https://youtube.com/channel/UCBrBBm0xuNe6J5k7-OU9BfA" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a class="nav-link" href="#" target="_blank"><i class="fab fa-youtube"></i></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Позвонить нам" href="tel:+9779840349182"><i class="fas fa-phone"></i></a>
+                    <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Call us" href="tel:+212677544562"><i class="fas fa-phone"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Связаться с нами" href="mailto:darkkingarthas@duck.com"><i class="far fa-envelope"></i></a>
+                    <a class="nav-link" data-toggle="tooltip" data-placement="top" title="Contact us" href="bookshop@gmail.com"><i class="far fa-envelope"></i></a>
                 </li>
             </ul>
             <ul class="navbar-nav md-auto">
-                <h3 style="color: skyblue"><marquee behavior="scroll" direction="left" width="600">We are open! Don’t forget to rate our recommendation system.</marquee></h3>
+                <h3 style="color: rgb(248, 169, 178)"><marquee behavior="scroll" direction="left" width="600">We are open! Don’t forget to rate our books.</marquee></h3>
 
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -174,7 +174,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="{% url 'shop:product_list' %}"><i class="fas fa-home" style="color: white"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'about:about_detail' %}" style="color: white" >О нас</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about:about_detail' %}" style="color: white" >About us</a></li>
                 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="avbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white">Products</a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -192,7 +192,7 @@
 </li>
 
                 <li class="nav-item"><a class="nav-link" href="{% url 'contact:contact_detail' %}" style="color: white" >Contact Us</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://darkkingarthas.wordpress.com/" target="_blank" style="color: white" >Блог</a></li>
+    
                 
                 {% if user.is_authenticated %}
     <li class="nav-item dropdown">
@@ -224,7 +224,7 @@
                 </div>
                     <ul class="navbar-nav ml-auto">
                       <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Поиск..." aria-label="Search" name='search' value="{{search_term}}" size="50px">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" name='search' value="{{search_term}}" size="50px">
                         <button class="btn-search my-sm-0" type="submit">Search</button>
                       </form>
                     </ul>
@@ -262,7 +262,7 @@
     <div class="row">
         <div class="col-md-4 offset-md-4">
             <div class="copyright_content">
-                     А. И., &copy; <script>document.write(new Date().getFullYear());</script> | Diploma Django Project
+                     &copy; <script>document.write(new Date().getFullYear());</script> | BookShop | All rights reserved |
             </div>
         </div>
     </div>

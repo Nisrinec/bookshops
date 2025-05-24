@@ -12,17 +12,17 @@ def login_user(request):
 		user = authenticate(request, username=username, password=password)
 		if user is not None:
 			login(request, user)
-			messages.success(request, ('Вы успешно авторизовались!'))
+			messages.success(request, ('You have successfully logged in!'))
 			return redirect('shop:product_list')
 		else:
-			messages.success(request, ('Ошибка авторизации. Попробуйте ещё раз!'))
+			messages.success(request, ('Authorization error. Please try again!'))
 			return redirect('login')
 	else:
 		return render(request,'accounts/login.html',{})
 
 def logout_user(request):
 	logout(request)
-	messages.success(request, ('Вы вышли из аккаунта!'))
+	messages.success(request, ('You have logged out!'))
 	return redirect('shop:product_list')
 
 
@@ -35,7 +35,7 @@ def register_user(request):
 			password = form.cleaned_data['password1']
 			user = authenticate(request, username=username, password=password)
 			login(request, user)
-			messages.success(request, ('Вы успешно зарегистрировались!'))
+			messages.success(request, ('You have successfully registered!'))
 			return redirect('shop:product_list')
 		
 	else:

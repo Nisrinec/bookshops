@@ -33,11 +33,11 @@ def recommend(request):
 
     df = pd.DataFrame(data)
 
-    # Добавление столбцов 'author' и 'publisher' в датафрейм
+   
     df['author'] = df['product_id'].apply(lambda x: Product.objects.get(id=x).author)
     df['publisher'] = df['product_id'].apply(lambda x: Product.objects.get(id=x).publisher)
 
-    # Преобразование текстовых значений автора и издательства в числовые коды
+    
     author_encoder = LabelEncoder()
     publisher_encoder = LabelEncoder()
     df['author_code'] = author_encoder.fit_transform(df['author'])
@@ -93,7 +93,7 @@ def recommend(request):
         product_list = product_list[:1]
         return render(request, 'shop/recommend.html', {'product_list': product_list})
     else:
-        message = "Вы оценили все возможные книги. В данный момент нам больше нечего вам порекомендовать."
+        message = "You have rated all the available books. At the moment, we have no more recommendations for you."
         return render(request, 'shop/recommend.html', {'message': message})
 
 
@@ -112,11 +112,11 @@ def product_list(request, category_slug=None):
         if search_term:
             products = Product.objects.filter(name__icontains=search_term)
             if products:
-                messages.success(request, 'Найдены результаты по запросу: ' + search_term)
+                messages.success(request, 'Results found for the query: ' + search_term)
             else:
-                messages.success(request, 'Ничего не найдено :(')
+                messages.success(request, 'Nothing was found :(')
         else:
-            messages.warning(request, 'Ваш запрос пуст')
+            messages.warning(request, 'Your query is empty')
 
     query = request.GET.get('q')
     if query:
@@ -146,17 +146,17 @@ def product_detail(request, id, slug):
     if request.method == "POST":
         rate = request.POST['rating']
 
-        # Проверяем, существует ли уже оценка от этого пользователя для данной книги
+        
         existing_rating = Myrating.objects.filter(user=request.user, product=product).first()
         if existing_rating:
-            messages.error(request, "Вы уже оценили эту книгу.")
+            messages.error(request, "You have already rated this book.")
         else:
             ratingObject = Myrating()
             ratingObject.user = request.user
             ratingObject.product = product
             ratingObject.rating = rate
             ratingObject.save()
-            messages.success(request, "Ваш отзыв добавлен ")
+            messages.success(request, "Your review has been added ")
 
         return redirect('shop:product_list')
 
